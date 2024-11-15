@@ -1,0 +1,43 @@
+html, body {
+    height: 100%; /* Pastikan tinggi body 100% */
+    margin: 0; /* Hapus margin default */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Atur arah kolom untuk flexbox */
+}
+
+main {
+    flex: 1; /* Buat main mengambil sisa ruang yang ada */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #000; /* Warna latar belakang navbar */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px; /* Padding untuk tautan */
+}
+
+nav ul li a:hover {
+    background-color: #ddd; /* Warna latar belakang saat hover */
+    border-radius: 5px; /* Sudut melengkung saat hover */
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Mengubah warna border tombol */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='white'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Mengubah warna ikon hamburger */
+}
