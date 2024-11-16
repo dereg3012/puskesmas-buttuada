@@ -20,7 +20,7 @@
         // Menggunakan require_once untuk mengimpor konten 'about'
         require_once 'about.php'; 
         ?>
-        <h1>Tentang Puskesmas Mamuju</h1>
+        <h1>Tentang Puskesmas Buttuada</h1>
         <p>Kami berkomitmen untuk memberikan pelayanan kesehatan yang berkualitas kepada masyarakat.</p>
         <p>Dengan berbagai layanan yang kami tawarkan, kami berusaha untuk memenuhi kebutuhan kesehatan masyarakat dengan sebaik-baiknya.</p>
     </main>
