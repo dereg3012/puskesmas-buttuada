@@ -1,31 +1,31 @@
 html, body {
-    height: 100%; /* Pastikan tinggi body 100% */
-    margin: 0; /* Hapus margin default */
+    height: 100%; /* Pastikan body memiliki tinggi 100% */
+    margin: 0; /* Menghilangkan margin default */
+    display: flex; /* Menggunakan flexbox untuk body */
+    flex-direction: column; /* Atur arah kolom untuk flexbox */
 }
 
 body {
     display: flex;
-    flex-direction: column; /* Atur arah kolom untuk flexbox */
+    flex-direction: column;
+    overflow-x: hidden; /* Atur arah kolom untuk flexbox */
 }
 
 main {
     flex: 1; /* Buat main mengambil sisa ruang yang ada */
+    max-width: 100px; /* Atur lebar maksimum untuk konten */
+    margin: 0 auto; /* Pusatkan konten */
+    padding: 0px; /* Tambahkan padding untuk ruang di dalam */
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    background-color: #343a40; /* Warna latar belakang navbar */
-}
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #f2eeee;
+    color: #ffffff; /* Mengubah warna teks menjadi putih */
     padding: 10px 15px; /* Padding untuk tautan */
 }
 
@@ -34,8 +34,154 @@ nav ul li a:hover {
     border-radius: 5px; /* Sudut melengkung saat hover */
 }
 
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+a {
+    color: #000;
+}
+
+/* header */
+
+.header {
+    background-color: #3a3939;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    padding: 10px 50px;
+}
+
+.header ul {
+    margin: right;
+    padding: 0 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #3a3939; /* Warna latar belakang navbar */
+}
+.header li {
+    float: left; /* Mengatur item menu untuk sejajar secara horizontal */
+}
+
+.header li a {
+    display: block; /* Pastikan tautan mengambil ruang penuh */
+    padding: 20px 0px; /* Padding yang konsisten */
+    text-decoration: none;
+    color: #ffffff; /* Mengubah warna teks menjadi putih */
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: #3a3939;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* menu */
+
+.menu {
+    list-style: none; /* Menghilangkan bullet points */
+    display: flex; /* Menggunakan flexbox untuk menu */
+    margin-left: auto; /* Menyelaraskan menu ke kanan */
+    padding: 0; /* Menghilangkan padding default */
+}
+
+.header .menu {
+    clear: both;
+    max-height: 50;
+    transition: max-height .2s ease-out;
+    margin-right: auto;
+    margin-top: 10px; /* Menambahkan margin-top untuk menggeser menu ke bawah */
+}
+
+.header .menu-btn {
+    display: none; /* Menyembunyikan checkbox */
+}
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    display: block; /* Pastikan div navicon ditampilkan */
+    width: 30px; /* Lebar garis */
+    height: 3px; /* Tinggi garis */
+    background-color: white; /* Warna garis menjadi putih */
+    margin: 6px 0px; /* Jarak antar garis */
+    transition: all 0.2s ease; /* Transisi saat toggle */
+}
+
+/* Tampilkan ikon hamburger saat checkbox tidak dicentang */
+.header .menu-btn:not(:checked) ~ .menu-icon .navicon:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.header .menu-btn:not(:checked) ~ .menu-icon .navicon:nth-child(2) {
+    opacity: 5;
+}
+
+.header .menu-btn:not(:checked) ~ .menu-icon .navicon:nth-child(3) {
+    transform: rotate(0deg);
+}
+
+/* Tampilkan ikon X saat checkbox dicentang */
+.header .menu-btn:checked ~ .menu-icon .navicon:nth-child(1) {
+    transform: rotate(45deg); /* Rotasi garis pertama */
+    top: 8px; /* Sesuaikan posisi */
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:nth-child(2) {
+    opacity: 0; /* Sembunyikan garis kedua */
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:nth-child(3) {
+    transform: rotate(-45deg); /* Rotasi garis ketiga */
+    top: 8px; /* Sesuaikan posisi */
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+/* 48em = 768px */
+@media (max-width: 768px) {
+    main {
+        max-width: 100%; /* Pastikan lebar maksimum 100% pada layar kecil */
+        padding: 10px; /* Kurangi padding di layar kecil */
+    }
+}
+@media (min-width: 48em) {
+    .header li {
+        float: right;
+    }
+    .header li a {
+        padding: 10px 0px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
+
 .navbar-toggler {
-    border-color: rgba(241, 234, 234, 0.1); /* Mengubah warna border tombol */
+    border-color: #343a40; /* Mengubah warna border tombol */
     background: none; /* Menghapus background */
     cursor: pointer; /* Menambahkan kursor pointer */
 }
